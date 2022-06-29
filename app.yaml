@@ -1,0 +1,15 @@
+service: collection-service
+runtime: nodejs
+env: flex
+automatic_scaling:
+  min_num_instances: 2
+  max_num_instances: 10
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.35
+resources:
+  cpu: 1
+  memory_gb: 4
+  disk_size_gb: 20
+readiness_check:
+  app_start_timeout_sec: 1800
